@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darba Restaurant</title>
+  <title>Darbar Restaurant</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Overpass+Mono:wght@300;400&display=swap" rel="stylesheet">
   <style>
@@ -625,10 +625,9 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">Darba</div>
+    <div class="nav-logo">Darbar</div>
     <ul class="nav-links">
       <li><a href="#about">Story</a></li>
-      <li><a href="#menu">Menu</a></li>
       <li><a href="#ambiance">Experience</a></li>
       <li><a href="#reserve">Reserve</a></li>
     </ul>
@@ -639,11 +638,28 @@
     <div class="hero-bg"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Est. Kampala, Uganda</p>
-      <h1 class="hero-title">DAR<em>BA</em></h1>
+      <h1 class="hero-title">DAR<em>BAR</em></h1>
       <p class="hero-subtitle">Where every plate tells a story of land and season</p>
       <div class="hero-cta">
-        <a href="#reserve" class="btn-gold"><span>Reserve a Table</span></a>
+        <a href="#reserve" class="btn-gold" style="margin-right: 1rem;"><span>Reserve a Table</span></a>
+        <a href="https://glovoapp.com/en/ug/kampala/stores/darbar-restaurant-kpa" target="_blank" class="btn-gold"><span>🛵 &nbsp;Order on Glovo</span></a>
       </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/256741095132" target="_blank" style="
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+    width: 56px; height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+  " onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.6)'"
+     onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
+    💬
+  </a>
     </div>
     <div class="scroll-hint">
       <span>Scroll</span>
@@ -682,147 +698,6 @@
     </div>
   </section>
 
-  <!-- MENU -->
-  <section id="menu" class="menu-section">
-    <div class="menu-inner">
-      <div class="menu-header">
-        <div>
-          <p class="section-label">Curated Selection</p>
-          <h2 class="section-title">The <em>Menu</em></h2>
-        </div>
-        <div class="menu-tabs">
-          <button class="tab active" onclick="switchTab('starters')">Starters</button>
-          <button class="tab" onclick="switchTab('mains')">Mains</button>
-          <button class="tab" onclick="switchTab('desserts')">Desserts</button>
-        </div>
-      </div>
-
-      <!-- STARTERS -->
-      <div class="menu-grid active" id="starters">
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Rolex Bites</h4>
-            <p>Crispy chapati rolls with spiced egg, peppers & fresh herbs</p>
-          </div>
-          <div class="item-price">UGX 18,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Groundnut Velouté</h4>
-            <p>Silky peanut broth with crispy plantain croutons</p>
-          </div>
-          <div class="item-price">UGX 22,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Tilapia Ceviche</h4>
-            <p>Lake-caught tilapia, citrus, chilli & garden coriander</p>
-          </div>
-          <div class="item-price">UGX 28,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Matoke Fritters</h4>
-            <p>Golden fried green banana with smoked pepper aioli</p>
-          </div>
-          <div class="item-price">UGX 16,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Charcuterie Board</h4>
-            <p>Smoked meats, pickled vegetables & cassava crackers</p>
-          </div>
-          <div class="item-price">UGX 45,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Garden Salad</h4>
-            <p>Seasonal leaves, pawpaw, toasted sesame & lemon dressing</p>
-          </div>
-          <div class="item-price">UGX 15,000</div>
-        </div>
-      </div>
-
-      <!-- MAINS -->
-      <div class="menu-grid" id="mains">
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Nyama Choma Platter</h4>
-            <p>Slow-grilled beef short ribs, kachumbari & ugali</p>
-          </div>
-          <div class="item-price">UGX 75,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Nile Perch</h4>
-            <p>Pan-seared fillet, coconut rice, mango salsa & lime</p>
-          </div>
-          <div class="item-price">UGX 68,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Goat Pilau</h4>
-            <p>Fragrant spiced rice with slow-braised goat & raita</p>
-          </div>
-          <div class="item-price">UGX 55,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Butter Chicken Curry</h4>
-            <p>Tender chicken in rich tomato-cream sauce, naan bread</p>
-          </div>
-          <div class="item-price">UGX 52,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Mushroom & Groundnut Stew</h4>
-            <p>Wild mushrooms, peanut sauce, plantain & steamed rice</p>
-          </div>
-          <div class="item-price">UGX 38,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Chef's Signature</h4>
-            <p>Rotating daily creation — ask your server for today's offering</p>
-          </div>
-          <div class="item-price">Market price</div>
-        </div>
-      </div>
-
-      <!-- DESSERTS -->
-      <div class="menu-grid" id="desserts">
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Mandazi Doughnuts</h4>
-            <p>Cardamom-spiced, served with passion fruit curd</p>
-          </div>
-          <div class="item-price">UGX 14,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Chocolate Lava Cake</h4>
-            <p>Dark chocolate, warm centre, vanilla bean ice cream</p>
-          </div>
-          <div class="item-price">UGX 22,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Mango Pannacotta</h4>
-            <p>Coconut milk base with fresh mango coulis & mint</p>
-          </div>
-          <div class="item-price">UGX 18,000</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Fruit Platter</h4>
-            <p>Seasonal tropical fruits, honey drizzle & lime zest</p>
-          </div>
-          <div class="item-price">UGX 16,000</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
 
   <!-- AMBIANCE -->
   <section id="ambiance">
@@ -833,7 +708,7 @@
         <div class="amb-card large">
           <span class="amb-icon">🕯</span>
           <h3>Evening Dining</h3>
-          <p>As the sun dips below Kampala's skyline, Darba transforms into an intimate sanctuary. Candlelit tables, curated music, and attentive service that never intrudes — only enhances. The perfect setting for a celebration or a quiet evening for two.</p>
+          <p>As the sun dips below Kampala's skyline, Darbar transforms into an intimate sanctuary. Candlelit tables, curated music, and attentive service that never intrudes — only enhances. The perfect setting for a celebration or a quiet evening for two.</p>
         </div>
         <div class="amb-card">
           <span class="amb-icon">🌿</span>
@@ -859,51 +734,13 @@
     <div class="reservation-inner">
       <p class="section-label">Join Us</p>
       <h2 class="section-title">Make a <em>Reservation</em></h2>
-      <p>We look forward to welcoming you to Darba's table.</p>
+      <p>We look forward to welcoming you to Darbar's table.<br>Call us to book your spot — open every day, 7:30 AM to midnight.</p>
 
-      <div class="res-form">
-        <div class="field">
-          <label>Full Name</label>
-          <input type="text" placeholder="Your name" />
-        </div>
-        <div class="field">
-          <label>Phone / WhatsApp</label>
-          <input type="tel" placeholder="+256 700 000 000" />
-        </div>
-        <div class="field">
-          <label>Date</label>
-          <input type="date" />
-        </div>
-        <div class="field">
-          <label>Time</label>
-          <select>
-            <option>12:00 PM — Lunch</option>
-            <option>1:00 PM — Lunch</option>
-            <option>2:00 PM — Lunch</option>
-            <option>6:00 PM — Dinner</option>
-            <option>7:00 PM — Dinner</option>
-            <option>8:00 PM — Dinner</option>
-            <option>9:00 PM — Dinner</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Guests</label>
-          <select>
-            <option>1 Guest</option>
-            <option>2 Guests</option>
-            <option>3 Guests</option>
-            <option>4 Guests</option>
-            <option>5 Guests</option>
-            <option>6+ Guests — Private Dining</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Occasion (Optional)</label>
-          <input type="text" placeholder="Birthday, anniversary, business dinner…" />
-        </div>
-        <div class="full">
-          <button class="btn-gold" onclick="handleReservation()"><span>Confirm Reservation</span></button>
-        </div>
+      <div style="margin-top: 3rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <a href="tel:0741095132" class="btn-gold" style="font-size: 1.2rem; padding: 1.2rem 4rem; letter-spacing: 0.15em;">
+          <span>📞 &nbsp;0741 095 132</span>
+        </a>
+        <p style="font-family: 'Overpass Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">Tap to call</p>
       </div>
 
     </div>
@@ -912,43 +749,25 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-info">
-      <p><a href="#">Plot 12, Acacia Avenue</a></p>
-      <p>Kololo, Kampala, Uganda</p>
+      <p>First Floor, The Marina Hotel</p>
+      <p>Opp. Quality Supermarket, Martin Rd</p>
+      <p>Kampala, Uganda</p>
       <br>
-      <p>Open Daily</p>
-      <p>12:00 PM — 10:30 PM</p>
+      <p>Open Every Day</p>
+      <p>7:30 AM — 12:00 AM</p>
     </div>
-    <div class="footer-logo">Darba</div>
+    <div class="footer-logo">Darbar</div>
     <div class="footer-info footer-right">
-      <p><a href="tel:+256700000000">+256 700 000 000</a></p>
-      <p><a href="mailto:hello@Darbar.co.ug">hello@Darbar.co.ug</a></p>
+      <p><a href="tel:0741095132">0741 095 132</a></p>
+      <p><a href="mailto:kjifoodpointug@gmail.com">kjifoodpointug@gmail.com</a></p>
       <br>
-      <p><a href="#">Instagram</a> &nbsp;·&nbsp; <a href="#">Facebook</a></p>
-      <p><a href="#">WhatsApp</a></p>
+      <p><a href="https://www.instagram.com/darbarrestaurant2" target="_blank">Instagram</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@darbarrestaurantug" target="_blank">TikTok</a></p>
+      <p><a href="https://wa.me/256741095132" target="_blank">WhatsApp</a></p>
     </div>
   </footer>
   <div class="footer-copy">© 2026 Darbar Restaurant. All rights reserved.</div>
 
   <script>
-    function switchTab(tab) {
-      document.querySelectorAll('.menu-grid').forEach(g => g.classList.remove('active'));
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      document.getElementById(tab).classList.add('active');
-      event.target.classList.add('active');
-    }
-
-    function handleReservation() {
-      const btn = document.querySelector('.res-form .btn-gold span');
-      btn.textContent = 'Request Sent ✓';
-      btn.parentElement.style.borderColor = '#6a9b6a';
-      btn.parentElement.style.color = '#6a9b6a';
-      setTimeout(() => {
-        btn.textContent = 'Confirm Reservation';
-        btn.parentElement.style.borderColor = '';
-        btn.parentElement.style.color = '';
-      }, 3000);
-    }
-
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -959,7 +778,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.about, .menu-inner, .ambiance, .reservation-inner').forEach(el => {
+    document.querySelectorAll('.about, .ambiance, .reservation-inner').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(40px)';
       el.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
