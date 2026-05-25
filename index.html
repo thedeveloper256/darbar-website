@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darbar Restaurant</title>
+  <meta name="description" content="Darbar Restaurant – Kampala's finest dining experience. Rooted in East African tradition, crafted with seasonal ingredients. Reserve a table or order on Glovo." />
+  <meta property="og:title" content="Darbar Restaurant | Kampala" />
+  <meta property="og:description" content="Where every plate tells a story of land and season. Fine dining in Kampala, Uganda." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Darbar Restaurant | Kampala</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Overpass+Mono:wght@300;400&display=swap" rel="stylesheet">
   <style>
@@ -475,6 +481,7 @@
       margin-bottom: 3.5rem;
     }
 
+    /* (form styles kept for future use) */
     .res-form {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -628,6 +635,7 @@
     <div class="nav-logo">Darbar</div>
     <ul class="nav-links">
       <li><a href="#about">Story</a></li>
+      <li><a href="#menu">Menu</a></li>
       <li><a href="#ambiance">Experience</a></li>
       <li><a href="#reserve">Reserve</a></li>
     </ul>
@@ -644,22 +652,6 @@
         <a href="#reserve" class="btn-gold" style="margin-right: 1rem;"><span>Reserve a Table</span></a>
         <a href="https://glovoapp.com/en/ug/kampala/stores/darbar-restaurant-kpa" target="_blank" class="btn-gold"><span>🛵 &nbsp;Order on Glovo</span></a>
       </div>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/256741095132" target="_blank" style="
-    position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
-    width: 56px; height: 56px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-    font-size: 1.6rem;
-    text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-  " onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.6)'"
-     onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
-    💬
-  </a>
     </div>
     <div class="scroll-hint">
       <span>Scroll</span>
@@ -673,7 +665,7 @@
       <div class="about-text">
         <p class="section-label">Our Story</p>
         <h2 class="section-title">Rooted in <em>tradition,</em><br>crafted for today</h2>
-        <p>Darba was born from a simple belief — that great food is an act of care. We draw inspiration from East Africa's rich culinary heritage, pairing time-honoured recipes with the finest seasonal ingredients sourced from local farmers and producers.</p>
+        <p>Darbar was born from a simple belief — that great food is an act of care. We draw inspiration from East Africa's rich culinary heritage, pairing time-honoured recipes with the finest seasonal ingredients sourced from local farmers and producers.</p>
         <p>Every dish that leaves our kitchen carries with it the intention of the hands that shaped it: honest, generous, and full of character.</p>
         <div class="stat-row">
           <div class="stat">
@@ -698,6 +690,151 @@
     </div>
   </section>
 
+  <!-- MENU -->
+  <section id="menu" class="menu-section">
+    <div class="menu-inner">
+      <div class="menu-header">
+        <div>
+          <p class="section-label">Our Kitchen</p>
+          <h2 class="section-title">The <em>Menu</em></h2>
+        </div>
+        <div class="menu-tabs">
+          <button class="tab active" data-category="breakfast">Breakfast</button>
+          <button class="tab" data-category="lunch">Lunch</button>
+          <button class="tab" data-category="dinner">Dinner</button>
+          <button class="tab" data-category="drinks">Drinks</button>
+        </div>
+      </div>
+
+      <!-- Breakfast Grid -->
+      <div class="menu-grid active" id="breakfast">
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Katogo</h4>
+            <p>Matooke with beef stew, greens, and avocado</p>
+          </div>
+          <div class="item-price">UGX 18K</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Masala Chai & Mandazi</h4>
+            <p>Spiced tea with fresh doughnuts</p>
+          </div>
+          <div class="item-price">UGX 12K</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Egg Chapati Roll</h4>
+            <p>Flaky chapati with egg, tomato, and chili</p>
+          </div>
+          <div class="item-price">UGX 14K</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Tropical Fruit Plate</h4>
+            <p>Seasonal mango, pineapple, and passion fruit</p>
+          </div>
+          <div class="item-price">UGX 16K</div>
+        </div>
+      </div>
+
+      <!-- Lunch Grid -->
+      <div class="menu-grid" id="lunch">
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Luwombo</h4>
+            <p>Steamed chicken in groundnut sauce, served in banana leaves</p>
+          </div>
+          <div class="item-price">UGX 28K</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Fish Fillet</h4>
+            <p>Pan-seared Nile perch with creamed spinach and ugali</p>
+          </div>
+          <div class="item-price">UGX 32K</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Vegetable Curry</h4>
+            <p>Coconut-based curry with sweet potatoes, chickpeas, and rice</p>
+          </div>
+          <div class="item-price">UGX 22K</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Grilled Chicken Salad</h4>
+            <p>Mixed greens, avocado, mango, and citrus dressing</p>
+          </div>
+          <div class="item-price">UGX 26K</div>
+        </div>
+      </div>
+
+      <!-- Dinner Grid -->
+      <div class="menu-grid" id="dinner">
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Slow-Braised Goat</h4>
+            <p>Fork-tender with roasted root vegetables and kachumbari</p>
+          </div>
+          <div class="item-price">UGX 38K</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Tilapia Platter</h4>
+            <p>Whole grilled tilapia with plantain and coconut rice</p>
+          </div>
+          <div class="item-price">UGX 40K</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Bean & Plantain Stew</h4>
+            <p>Hearty vegetarian stew with chapati</p>
+          </div>
+          <div class="item-price">UGX 24K</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Grilled Beef Steak</h4>
+            <p>Local beef with peppercorn sauce, sautéed mushrooms</p>
+          </div>
+          <div class="item-price">UGX 42K</div>
+        </div>
+      </div>
+
+      <!-- Drinks Grid -->
+      <div class="menu-grid" id="drinks">
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Darbar Signature Cocktail</h4>
+            <p>Gin, passion fruit, lemon, and honey</p>
+          </div>
+          <div class="item-price">UGX 20K</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Ugandan Coffee</h4>
+            <p>Single-origin arabica, French press</p>
+          </div>
+          <div class="item-price">UGX 12K</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Fresh Juice</h4>
+            <p>Mango, passion, or mixed fruit</p>
+          </div>
+          <div class="item-price">UGX 10K</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <h4>Local Beer</h4>
+            <p>Nile Special, Bell Lager, or Club Pilsner</p>
+          </div>
+          <div class="item-price">UGX 8K</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- AMBIANCE -->
   <section id="ambiance">
@@ -767,7 +904,41 @@
   </footer>
   <div class="footer-copy">© 2026 Darbar Restaurant. All rights reserved.</div>
 
+  <!-- Floating WhatsApp (placed at end for clarity) -->
+  <a href="https://wa.me/256741095132" target="_blank" aria-label="Chat on WhatsApp" style="
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+    width: 56px; height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+  " onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.6)'"
+     onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
+    💬
+  </a>
+
   <script>
+    // Menu tab switching
+    const tabs = document.querySelectorAll('.tab');
+    const grids = document.querySelectorAll('.menu-grid');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        // Hide all grids
+        grids.forEach(g => g.classList.remove('active'));
+        // Add active to clicked tab
+        tab.classList.add('active');
+        // Show corresponding grid
+        const category = tab.dataset.category;
+        document.getElementById(category).classList.add('active');
+      });
+    });
+
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -778,7 +949,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.about, .ambiance, .reservation-inner').forEach(el => {
+    document.querySelectorAll('.about, .menu-section, .ambiance, .reservation-inner').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(40px)';
       el.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
