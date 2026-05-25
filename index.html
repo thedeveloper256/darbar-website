@@ -7,11 +7,6 @@
   <meta property="og:title" content="Darbar Restaurant | Kampala" />
   <meta property="og:description" content="Where every plate tells a story of land and season. Fine dining in Kampala, Uganda." />
   <meta property="og:type" content="website" />
-<<<<<<< HEAD
-=======
-  <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
->>>>>>> ac14ef7abfb4ae779be4345292dd98e0fac4f742
   <title>Darbar Restaurant | Kampala</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Overpass+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -408,13 +403,9 @@
     }
 
     /* ── AMBIANCE ── */
-    .ambiance { max-width: 1300px; margin: 0 auto; }
+    .ambiance { max-width: 900px; margin: 0 auto; }
 
     .ambiance-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
-      gap: 1.5rem;
       margin-top: 4rem;
     }
 
@@ -438,8 +429,6 @@
     }
 
     .amb-card:hover::before { opacity: 1; }
-
-    .amb-card.large { grid-column: span 2; }
 
     .amb-icon {
       font-size: 2rem;
@@ -482,67 +471,6 @@
       margin-bottom: 3.5rem;
     }
 
-<<<<<<< HEAD
-=======
-    /* (form styles kept for future use) */
-    .res-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .res-form .full { grid-column: 1 / -1; }
-
-    .field {
-      display: flex; flex-direction: column; gap: 0.5rem;
-      text-align: left;
-    }
-
-    .field label {
-      font-family: 'Overpass Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .field input, .field select {
-      background: rgba(245,240,232,0.04);
-      border: 1px solid var(--border);
-      padding: 1rem 1.2rem;
-      color: var(--cream);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      outline: none;
-      transition: border-color 0.3s;
-      appearance: none;
-    }
-
-    .field input:focus, .field select:focus {
-      border-color: var(--gold);
-    }
-
-    .field input::placeholder { color: var(--muted); }
-
-    .field select option { background: #1a1410; }
-
-    .res-form .btn-gold {
-      margin-top: 1rem;
-      padding: 1.2rem;
-      width: 100%;
-      text-align: center;
-      cursor: pointer;
-      font-family: 'Overpass Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
-      display: block;
-    }
-
->>>>>>> ac14ef7abfb4ae779be4345292dd98e0fac4f742
     /* ── FOOTER ── */
     footer {
       padding: 4rem;
@@ -600,9 +528,6 @@
       .about-image { display: none; }
 
       .menu-header { flex-direction: column; align-items: flex-start; }
-
-      .ambiance-grid { grid-template-columns: 1fr; }
-      .amb-card.large { grid-column: span 1; }
 
       footer { grid-template-columns: 1fr; text-align: center; }
       .footer-right { text-align: center; }
@@ -681,7 +606,6 @@
         </div>
         <div class="menu-tabs">
           <button class="tab active" data-category="breakfast">Breakfast</button>
-<<<<<<< HEAD
           <button class="tab" data-category="soups-salads">Soups & Salads</button>
           <button class="tab" data-category="starters">Starters</button>
           <button class="tab" data-category="bbq">BBQ</button>
@@ -1019,140 +943,6 @@
         <div class="menu-item"><h4>Zarda Rice</h4><p>Sweet rice dish</p></div>
         <div class="menu-item"><h4>Gajar Halwa</h4><p>Carrot-based sweet dessert</p></div>
         <div class="menu-item"><h4>Gulab Jamun</h4><p>4pcs — Soft milk-solid dumplings soaked in sugar syrup</p></div>
-=======
-          <button class="tab" data-category="lunch">Lunch</button>
-          <button class="tab" data-category="dinner">Dinner</button>
-          <button class="tab" data-category="drinks">Drinks</button>
-        </div>
-      </div>
-
-      <!-- Breakfast Grid -->
-      <div class="menu-grid active" id="breakfast">
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Katogo</h4>
-            <p>Matooke with beef stew, greens, and avocado</p>
-          </div>
-          <div class="item-price">UGX 18K</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Masala Chai & Mandazi</h4>
-            <p>Spiced tea with fresh doughnuts</p>
-          </div>
-          <div class="item-price">UGX 12K</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Egg Chapati Roll</h4>
-            <p>Flaky chapati with egg, tomato, and chili</p>
-          </div>
-          <div class="item-price">UGX 14K</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Tropical Fruit Plate</h4>
-            <p>Seasonal mango, pineapple, and passion fruit</p>
-          </div>
-          <div class="item-price">UGX 16K</div>
-        </div>
-      </div>
-
-      <!-- Lunch Grid -->
-      <div class="menu-grid" id="lunch">
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Luwombo</h4>
-            <p>Steamed chicken in groundnut sauce, served in banana leaves</p>
-          </div>
-          <div class="item-price">UGX 28K</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Fish Fillet</h4>
-            <p>Pan-seared Nile perch with creamed spinach and ugali</p>
-          </div>
-          <div class="item-price">UGX 32K</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Vegetable Curry</h4>
-            <p>Coconut-based curry with sweet potatoes, chickpeas, and rice</p>
-          </div>
-          <div class="item-price">UGX 22K</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Grilled Chicken Salad</h4>
-            <p>Mixed greens, avocado, mango, and citrus dressing</p>
-          </div>
-          <div class="item-price">UGX 26K</div>
-        </div>
-      </div>
-
-      <!-- Dinner Grid -->
-      <div class="menu-grid" id="dinner">
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Slow-Braised Goat</h4>
-            <p>Fork-tender with roasted root vegetables and kachumbari</p>
-          </div>
-          <div class="item-price">UGX 38K</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Tilapia Platter</h4>
-            <p>Whole grilled tilapia with plantain and coconut rice</p>
-          </div>
-          <div class="item-price">UGX 40K</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Bean & Plantain Stew</h4>
-            <p>Hearty vegetarian stew with chapati</p>
-          </div>
-          <div class="item-price">UGX 24K</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Grilled Beef Steak</h4>
-            <p>Local beef with peppercorn sauce, sautéed mushrooms</p>
-          </div>
-          <div class="item-price">UGX 42K</div>
-        </div>
-      </div>
-
-      <!-- Drinks Grid -->
-      <div class="menu-grid" id="drinks">
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Darbar Signature Cocktail</h4>
-            <p>Gin, passion fruit, lemon, and honey</p>
-          </div>
-          <div class="item-price">UGX 20K</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Ugandan Coffee</h4>
-            <p>Single-origin arabica, French press</p>
-          </div>
-          <div class="item-price">UGX 12K</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Fresh Juice</h4>
-            <p>Mango, passion, or mixed fruit</p>
-          </div>
-          <div class="item-price">UGX 10K</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <h4>Local Beer</h4>
-            <p>Nile Special, Bell Lager, or Club Pilsner</p>
-          </div>
-          <div class="item-price">UGX 8K</div>
-        </div>
->>>>>>> ac14ef7abfb4ae779be4345292dd98e0fac4f742
       </div>
     </div>
   </section>
@@ -1163,25 +953,10 @@
       <p class="section-label">The Experience</p>
       <h2 class="section-title">More than a <em>meal</em></h2>
       <div class="ambiance-grid">
-        <div class="amb-card large">
+        <div class="amb-card">
           <span class="amb-icon">🕯</span>
           <h3>Evening Dining</h3>
           <p>As the sun dips below Kampala's skyline, Darbar transforms into an intimate sanctuary. Candlelit tables, curated music, and attentive service that never intrudes — only enhances. The perfect setting for a celebration or a quiet evening for two.</p>
-        </div>
-        <div class="amb-card">
-          <span class="amb-icon">🌿</span>
-          <h3>Private Events</h3>
-          <p>Our private dining room accommodates up to 30 guests for corporate dinners, birthdays, and bespoke celebrations.</p>
-        </div>
-        <div class="amb-card">
-          <span class="amb-icon">🍷</span>
-          <h3>Curated Drinks</h3>
-          <p>A thoughtfully assembled wine list, craft cocktails, and local spirits — each pairing considered by our sommelier.</p>
-        </div>
-        <div class="amb-card">
-          <span class="amb-icon">🎵</span>
-          <h3>Live Music</h3>
-          <p>Friday and Saturday evenings feature live jazz and acoustic sets from Kampala's finest musicians.</p>
         </div>
       </div>
     </div>
@@ -1224,11 +999,7 @@
   </footer>
   <div class="footer-copy">© 2026 Darbar Restaurant. All rights reserved.</div>
 
-<<<<<<< HEAD
   <!-- Floating WhatsApp -->
-=======
-  <!-- Floating WhatsApp (placed at end for clarity) -->
->>>>>>> ac14ef7abfb4ae779be4345292dd98e0fac4f742
   <a href="https://wa.me/256741095132" target="_blank" aria-label="Chat on WhatsApp" style="
     position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
     width: 56px; height: 56px;
@@ -1251,19 +1022,9 @@
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-<<<<<<< HEAD
         tabs.forEach(t => t.classList.remove('active'));
         grids.forEach(g => g.classList.remove('active'));
         tab.classList.add('active');
-=======
-        // Remove active class from all tabs
-        tabs.forEach(t => t.classList.remove('active'));
-        // Hide all grids
-        grids.forEach(g => g.classList.remove('active'));
-        // Add active to clicked tab
-        tab.classList.add('active');
-        // Show corresponding grid
->>>>>>> ac14ef7abfb4ae779be4345292dd98e0fac4f742
         const category = tab.dataset.category;
         document.getElementById(category).classList.add('active');
       });
