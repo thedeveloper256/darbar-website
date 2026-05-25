@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darbar Restaurant</title>
+  <meta name="description" content="Darbar Restaurant – Kampala's finest dining experience. Rooted in East African tradition, crafted with seasonal ingredients. Reserve a table or order on Glovo." />
+  <meta property="og:title" content="Darbar Restaurant | Kampala" />
+  <meta property="og:description" content="Where every plate tells a story of land and season. Fine dining in Kampala, Uganda." />
+  <meta property="og:type" content="website" />
+  <title>Darbar Restaurant | Kampala</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Overpass+Mono:wght@300;400&display=swap" rel="stylesheet">
   <style>
@@ -87,7 +91,6 @@
         linear-gradient(160deg, #0e0b08 0%, #1a1410 50%, #0e0b08 100%);
     }
 
-    /* Decorative lines */
     .hero-bg::before {
       content: '';
       position: absolute;
@@ -336,10 +339,12 @@
     .menu-header {
       display: flex; justify-content: space-between; align-items: flex-end;
       margin-bottom: 4rem;
+      flex-wrap: wrap; gap: 1.5rem;
     }
 
     .menu-tabs {
       display: flex; gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
     .tab {
@@ -362,30 +367,23 @@
     }
 
     .menu-grid { display: none; }
-    .menu-grid.active { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .menu-grid.active { display: block; }
 
     .menu-item {
       padding: 2rem 0;
       border-bottom: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: baseline;
-      gap: 2rem;
       transition: background 0.3s;
     }
 
-    .menu-item:nth-child(odd) { padding-right: 3rem; }
-    .menu-item:nth-child(even) { padding-left: 3rem; border-left: 1px solid var(--border); }
-
     .menu-item:hover { background: rgba(184,146,74,0.03); }
 
-    .item-info h4 {
+    .menu-item h4 {
       font-size: 1.2rem;
       font-weight: 400;
       letter-spacing: 0.02em;
     }
 
-    .item-info p {
+    .menu-item p {
       font-size: 0.85rem;
       color: var(--muted);
       font-style: italic;
@@ -393,11 +391,15 @@
       line-height: 1.5;
     }
 
-    .item-price {
+    .menu-subheading {
+      padding: 2.5rem 0 1rem 0;
       font-family: 'Overpass Mono', monospace;
-      font-size: 0.85rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
       color: var(--gold);
-      white-space: nowrap;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
     }
 
     /* ── AMBIANCE ── */
@@ -475,63 +477,6 @@
       margin-bottom: 3.5rem;
     }
 
-    .res-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .res-form .full { grid-column: 1 / -1; }
-
-    .field {
-      display: flex; flex-direction: column; gap: 0.5rem;
-      text-align: left;
-    }
-
-    .field label {
-      font-family: 'Overpass Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .field input, .field select {
-      background: rgba(245,240,232,0.04);
-      border: 1px solid var(--border);
-      padding: 1rem 1.2rem;
-      color: var(--cream);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      outline: none;
-      transition: border-color 0.3s;
-      appearance: none;
-    }
-
-    .field input:focus, .field select:focus {
-      border-color: var(--gold);
-    }
-
-    .field input::placeholder { color: var(--muted); }
-
-    .field select option { background: #1a1410; }
-
-    .res-form .btn-gold {
-      margin-top: 1rem;
-      padding: 1.2rem;
-      width: 100%;
-      text-align: center;
-      cursor: pointer;
-      font-family: 'Overpass Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
-      display: block;
-    }
-
     /* ── FOOTER ── */
     footer {
       padding: 4rem;
@@ -579,24 +524,6 @@
       border-top: 1px solid rgba(184,146,74,0.08);
     }
 
-    /* ── DIVIDER ── */
-    .divider {
-      display: flex; align-items: center; gap: 2rem;
-      max-width: 300px; margin: 0 auto 4rem;
-    }
-
-    .divider::before, .divider::after {
-      content: ''; flex: 1; height: 1px;
-      background: var(--border);
-    }
-
-    .divider-gem {
-      width: 8px; height: 8px;
-      background: var(--gold);
-      transform: rotate(45deg);
-      flex-shrink: 0;
-    }
-
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       nav { padding: 1.2rem 1.5rem; }
@@ -606,15 +533,10 @@
       .about { grid-template-columns: 1fr; gap: 3rem; }
       .about-image { display: none; }
 
-      .menu-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-      .menu-grid.active { grid-template-columns: 1fr; }
-      .menu-item:nth-child(even) { padding-left: 0; border-left: none; }
-      .menu-item:nth-child(odd) { padding-right: 0; }
+      .menu-header { flex-direction: column; align-items: flex-start; }
 
       .ambiance-grid { grid-template-columns: 1fr; }
       .amb-card.large { grid-column: span 1; }
-
-      .res-form { grid-template-columns: 1fr; }
 
       footer { grid-template-columns: 1fr; text-align: center; }
       .footer-right { text-align: center; }
@@ -628,6 +550,7 @@
     <div class="nav-logo">Darbar</div>
     <ul class="nav-links">
       <li><a href="#about">Story</a></li>
+      <li><a href="#menu">Menu</a></li>
       <li><a href="#ambiance">Experience</a></li>
       <li><a href="#reserve">Reserve</a></li>
     </ul>
@@ -644,22 +567,6 @@
         <a href="#reserve" class="btn-gold" style="margin-right: 1rem;"><span>Reserve a Table</span></a>
         <a href="https://glovoapp.com/en/ug/kampala/stores/darbar-restaurant-kpa" target="_blank" class="btn-gold"><span>🛵 &nbsp;Order on Glovo</span></a>
       </div>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/256741095132" target="_blank" style="
-    position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
-    width: 56px; height: 56px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-    font-size: 1.6rem;
-    text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-  " onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.6)'"
-     onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
-    💬
-  </a>
     </div>
     <div class="scroll-hint">
       <span>Scroll</span>
@@ -673,7 +580,7 @@
       <div class="about-text">
         <p class="section-label">Our Story</p>
         <h2 class="section-title">Rooted in <em>tradition,</em><br>crafted for today</h2>
-        <p>Darba was born from a simple belief — that great food is an act of care. We draw inspiration from East Africa's rich culinary heritage, pairing time-honoured recipes with the finest seasonal ingredients sourced from local farmers and producers.</p>
+        <p>Darbar was born from a simple belief — that great food is an act of care. We draw inspiration from East Africa's rich culinary heritage, pairing time-honoured recipes with the finest seasonal ingredients sourced from local farmers and producers.</p>
         <p>Every dish that leaves our kitchen carries with it the intention of the hands that shaped it: honest, generous, and full of character.</p>
         <div class="stat-row">
           <div class="stat">
@@ -685,7 +592,7 @@
             <p>Locally sourced</p>
           </div>
           <div class="stat">
-            <h3>40+</h3>
+            <h3>200+</h3>
             <p>Menu creations</p>
           </div>
         </div>
@@ -698,6 +605,356 @@
     </div>
   </section>
 
+  <!-- MENU -->
+  <section id="menu" class="menu-section">
+    <div class="menu-inner">
+      <div class="menu-header">
+        <div>
+          <p class="section-label">Our Kitchen</p>
+          <h2 class="section-title">The <em>Menu</em></h2>
+        </div>
+        <div class="menu-tabs">
+          <button class="tab active" data-category="breakfast">Breakfast</button>
+          <button class="tab" data-category="soups-salads">Soups & Salads</button>
+          <button class="tab" data-category="starters">Starters</button>
+          <button class="tab" data-category="bbq">BBQ</button>
+          <button class="tab" data-category="rice-noodles">Rice & Noodles</button>
+          <button class="tab" data-category="main-course">Main Course</button>
+          <button class="tab" data-category="breads">Breads</button>
+          <button class="tab" data-category="sandwiches-burgers">Sandwiches</button>
+          <button class="tab" data-category="pizzas">Pizzas</button>
+          <button class="tab" data-category="african">African Corner</button>
+          <button class="tab" data-category="beverages">Beverages</button>
+          <button class="tab" data-category="dessert">Dessert</button>
+        </div>
+      </div>
+
+      <!-- BREAKFAST -->
+      <div class="menu-grid active" id="breakfast">
+        <div class="menu-subheading">Indian Breakfast</div>
+        <div class="menu-item"><h4>Bread Toasted</h4><p>2 Slices</p></div>
+        <div class="menu-item"><h4>Plain Paratha</h4></div>
+        <div class="menu-item"><h4>Boiled Eggs</h4><p>2 Eggs</p></div>
+        <div class="menu-item"><h4>Plain Omelette</h4><p>2 Eggs</p></div>
+        <div class="menu-item"><h4>Punjani Samosa</h4><p>Pair</p></div>
+        <div class="menu-item"><h4>French Toasted</h4><p>2 Slices</p></div>
+        <div class="menu-item"><h4>Aloo Paratha</h4></div>
+        <div class="menu-item"><h4>Spanish Omelette</h4><p>3 Eggs</p></div>
+        <div class="menu-item"><h4>Half Fried Eggs</h4><p>3 Eggs</p></div>
+        <div class="menu-item"><h4>Anda Paratha</h4></div>
+        <div class="menu-item"><h4>Keema Paratha</h4></div>
+        <div class="menu-item"><h4>Chili Cheese Omelette</h4></div>
+
+        <div class="menu-subheading">Combo Breakfast</div>
+        <div class="menu-item"><h4>English Breakfast</h4><p>Fried Eggs / Baked Beans / Omelette / Milk Tea (Pot) / Toasted Bread</p></div>
+        <div class="menu-item"><h4>Omelette Combo</h4><p>Boiled Eggs / Baked Beans / Omelette / Milk Tea (Pot) / Salads Beans</p></div>
+        <div class="menu-item"><h4>Aloo Combo</h4><p>Aloo Paratha / Boiled Eggs / Omelette / Milk Tea (Pot) / Beans</p></div>
+        <div class="menu-item"><h4>Chef Combo</h4><p>A Pair Of Sausage / Samosa / Paratha / Boiled Eggs / Omelette / Milk Tea (Pot) / Beans</p></div>
+        <div class="menu-item"><h4>Continental Breakfast</h4><p>2 Eggs (any style), Bread, Jam, Butter, Fresh Fruits, Glass of Fresh Juice / Tea/Coffee, Baked Beans</p></div>
+        <div class="menu-item"><h4>Asian Breakfast</h4></div>
+
+        <div class="menu-subheading">Weekend Special</div>
+        <div class="menu-item"><h4>Camel/Mutton Nihari</h4><p>1/4 kg — With plain naan & cup of tea</p></div>
+        <div class="menu-item"><h4>Goat Paya</h4><p>With rogani naan & cup of tea</p></div>
+        <div class="menu-item"><h4>Chicken Haleem</h4><p>1/4 kg — With plain naan & cup of tea</p></div>
+        <div class="menu-item"><h4>Halwa Puri</h4><p>With 2 puris, chana, & aloo bhaji & cup of tea</p></div>
+      </div>
+
+      <!-- SOUPS & SALADS -->
+      <div class="menu-grid" id="soups-salads">
+        <div class="menu-subheading">Soups</div>
+        <div class="menu-item"><h4>Corn Soup</h4><p>Chicken / Veg — A light, comforting broth featuring sweet corn and fresh garden vegetables.</p></div>
+        <div class="menu-item"><h4>Noodle Soup</h4><p>Chicken / Veg — Crisp vegetables and delicate noodles in a heartwarming bowl.</p></div>
+        <div class="menu-item"><h4>Hot and Sour Soup</h4><p>Chicken / Veg — A refined fusion of tang and heat.</p></div>
+        <div class="menu-item"><h4>Mushroom Soup</h4><p>Silky, blended mushrooms steeped with a hint of herbs. Served with Bread.</p></div>
+        <div class="menu-item"><h4>Special Darbar Dowdo Soup</h4><p>Tender mutton, hand-rolled noodles, fragrant mountain spices. Served with Bread.</p></div>
+
+        <div class="menu-subheading">Salads</div>
+        <div class="menu-item"><h4>Coleslaw Salad</h4><p>Green cabbage, red cabbage, shredded carrots, slaw mayonnaise.</p></div>
+        <div class="menu-item"><h4>Kacumbari Salad</h4><p>Avocado, tomatoes, onions and chilli peppers.</p></div>
+        <div class="menu-item"><h4>Garden Salad</h4><p>Lettuce, cucumber, sweet corns, tomatoes, carrots, onions with light vinaigrette and bell pepper.</p></div>
+        <div class="menu-item"><h4>Avocado & Tomato</h4><p>Avocado, tomatoes and cucumber with balsamic dressing.</p></div>
+        <div class="menu-item"><h4>Chicken Caesar</h4><p>Breast of seasonal chicken, Romaine lettuce, croutons, fresh parmesan, caesar dressing.</p></div>
+
+        <div class="menu-subheading">Extras (Add-ons)</div>
+        <div class="menu-item"><h4>Mayonnaise</h4></div>
+        <div class="menu-item"><h4>Salads</h4></div>
+        <div class="menu-item"><h4>Cheese</h4></div>
+        <div class="menu-item"><h4>Gravy</h4></div>
+        <div class="menu-item"><h4>Plain Yogurt</h4></div>
+      </div>
+
+      <!-- STARTERS -->
+      <div class="menu-grid" id="starters">
+        <div class="menu-subheading">Non-Veg / Chinese</div>
+        <div class="menu-item"><h4>Chicken Manchurian</h4><p>Dry / Gravy</p></div>
+        <div class="menu-item"><h4>Chicken-65</h4><p>Dry / Gravy</p></div>
+        <div class="menu-item"><h4>Chicken Lollypop</h4><p>Dry / Gravy (8pcs)</p></div>
+        <div class="menu-item"><h4>Chilli Chicken</h4><p>Dry / Gravy</p></div>
+        <div class="menu-item"><h4>Chicken Wings</h4><p>Dry / Gravy (6pcs)</p></div>
+
+        <div class="menu-subheading">Rolls</div>
+        <div class="menu-item"><h4>Chicken Spring Rolls</h4></div>
+        <div class="menu-item"><h4>Chicken Tikka Roll</h4><p>Naan / Paratha</p></div>
+        <div class="menu-item"><h4>Mutton Seekh Kebab Roll</h4></div>
+        <div class="menu-item"><h4>Chicken Crispy Roll</h4></div>
+        <div class="menu-item"><h4>Veg Roll</h4></div>
+
+        <div class="menu-subheading">Veg Starters</div>
+        <div class="menu-item"><h4>Fried/Roasted Papadum</h4><p>2pcs — Thin, crispy lentil wafers</p></div>
+        <div class="menu-item"><h4>Masala Papadum</h4><p>Crisp papadum topped with onions, tomatoes, chaat masala</p></div>
+        <div class="menu-item"><h4>Masala Chips</h4><p>Thick-cut fries tossed in tangy Indian spices</p></div>
+        <div class="menu-item"><h4>Aloo Pakora</h4><p>Sliced potatoes in spiced gram flour batter</p></div>
+        <div class="menu-item"><h4>Harabhara Kebab</h4><p>6pcs — Spinach and green pea patties</p></div>
+        <div class="menu-item"><h4>Mixed Vegetable Pakora</h4></div>
+        <div class="menu-item"><h4>Vegetable Manchurian</h4><p>Gravy / Dry</p></div>
+        <div class="menu-item"><h4>Paneer Manchurian</h4><p>Dry / Gravy</p></div>
+        <div class="menu-item"><h4>Chilli Paneer</h4><p>Dry / Gravy</p></div>
+      </div>
+
+      <!-- BBQ -->
+      <div class="menu-grid" id="bbq">
+        <div class="menu-item"><h4>Chicken Tikka</h4><p>Leg / Breast — Marinated chicken grilled in spices, yogurt, lemon</p></div>
+        <div class="menu-item"><h4>Paneer Tikka</h4><p>6 pcs — Chargrilled cottage cheese, peppers, onions</p></div>
+        <div class="menu-item"><h4>Tandoori Wings</h4><p>6 pcs — Grilled in sizzling peri peri spices</p></div>
+        <div class="menu-item"><h4>Chicken Tikka Boneless</h4><p>8 pcs — Marinated in spices, yogurt, grilled or baked</p></div>
+        <div class="menu-item"><h4>Haryali Boti</h4><p>8 pcs — Tender mutton with fragrant spices</p></div>
+        <div class="menu-item"><h4>Chicken Malai Boti</h4><p>8 pcs — Creamy yogurt, cream, and spices</p></div>
+        <div class="menu-item"><h4>Mutton Boti</h4><p>8 pcs — Marinated in spices and yogurt</p></div>
+        <div class="menu-item"><h4>Mutton / Chicken Seekh Kebab</h4></div>
+        <div class="menu-item"><h4>Non-Veg BBQ Platter</h4><p>Assorted BBQ items, grilled or smoked</p></div>
+      </div>
+
+      <!-- RICE & NOODLES -->
+      <div class="menu-grid" id="rice-noodles">
+        <div class="menu-subheading">Rice</div>
+        <div class="menu-item"><h4>Mutton / Chicken Biryani</h4></div>
+        <div class="menu-item"><h4>Vegetable Biryani</h4></div>
+        <div class="menu-item"><h4>Biryani Rice</h4></div>
+        <div class="menu-item"><h4>Afghani Pulao</h4><p>Basmati rice with mutton or chicken, garnished with kajjnu and carrots</p></div>
+        <div class="menu-item"><h4>Mutton / Chicken Pulao</h4></div>
+        <div class="menu-item"><h4>Vegetable Pulao</h4></div>
+        <div class="menu-item"><h4>Chicken Schezwan</h4></div>
+        <div class="menu-item"><h4>Chicken Fried Rice</h4></div>
+        <div class="menu-item"><h4>Vegetable Schezwan</h4></div>
+        <div class="menu-item"><h4>Vegetable Fried Rice</h4></div>
+        <div class="menu-item"><h4>Egg Fried Rice</h4></div>
+        <div class="menu-item"><h4>Plain Rice</h4><p>Served with salads</p></div>
+        <div class="menu-item"><h4>Zeera Rice</h4></div>
+
+        <div class="menu-subheading">Noodles</div>
+        <div class="menu-item"><h4>Chicken Noodles</h4></div>
+        <div class="menu-item"><h4>Vegetable Noodles</h4></div>
+      </div>
+
+      <!-- MAIN COURSE -->
+      <div class="menu-grid" id="main-course">
+        <div class="menu-subheading">Mutton Curries</div>
+        <div class="menu-item"><h4>Mutton Karahi</h4></div>
+        <div class="menu-item"><h4>Mutton Karahi Boneless</h4></div>
+        <div class="menu-item"><h4>Mutton Nihari</h4></div>
+        <div class="menu-item"><h4>Mutton Achari</h4></div>
+        <div class="menu-item"><h4>Mutton Handi</h4></div>
+        <div class="menu-item"><h4>Mutton Curry</h4></div>
+        <div class="menu-item"><h4>Mutton Qorma</h4></div>
+        <div class="menu-item"><h4>Mutton Rogan Josh</h4></div>
+        <div class="menu-item"><h4>Mutton White Qorma</h4></div>
+
+        <div class="menu-subheading">Chicken Curries</div>
+        <div class="menu-item"><h4>Chicken Karahi</h4></div>
+        <div class="menu-item"><h4>Chicken Handi</h4></div>
+        <div class="menu-item"><h4>Chicken Curry</h4></div>
+        <div class="menu-item"><h4>Chicken Qorma</h4></div>
+        <div class="menu-item"><h4>Chicken White Qorma</h4></div>
+
+        <div class="menu-subheading">Boneless Curries</div>
+        <div class="menu-item"><h4>Chicken Karahi Boneless</h4></div>
+        <div class="menu-item"><h4>Butter Chicken</h4></div>
+        <div class="menu-item"><h4>Chicken Tikka Masala</h4></div>
+
+        <div class="menu-subheading">Meat & Veg Curries</div>
+        <div class="menu-item"><h4>Chicken Chola</h4></div>
+        <div class="menu-item"><h4>Dal Gosht</h4></div>
+        <div class="menu-item"><h4>Chicken / Mutton Palak</h4></div>
+        <div class="menu-item"><h4>Anda Curry / Bhurji</h4></div>
+
+        <div class="menu-subheading">Chinese Curries</div>
+        <div class="menu-item"><h4>Chicken Shashlik</h4><p>Served with rice</p></div>
+        <div class="menu-item"><h4>Chicken Chilli</h4><p>Served with rice</p></div>
+
+        <div class="menu-subheading">Veg Curries</div>
+        <div class="menu-item"><h4>Mixed Curry</h4></div>
+        <div class="menu-item"><h4>Paneer Tikka Masala / Karahi</h4></div>
+        <div class="menu-item"><h4>Mutter Paneer Masala</h4></div>
+        <div class="menu-item"><h4>Palak Paneer</h4></div>
+        <div class="menu-item"><h4>Paneer Bhurji / Aloo Ghobi</h4></div>
+        <div class="menu-item"><h4>Bhindi Masala</h4></div>
+        <div class="menu-item"><h4>Malai Kofta</h4></div>
+        <div class="menu-item"><h4>Cashew Masala</h4></div>
+        <div class="menu-item"><h4>Yellow Dal Tadka</h4></div>
+        <div class="menu-item"><h4>Mash Dal Fry</h4></div>
+        <div class="menu-item"><h4>Chana Dal Fry</h4></div>
+        <div class="menu-item"><h4>Dal Mackhani</h4></div>
+        <div class="menu-item"><h4>Dal Fry</h4></div>
+      </div>
+
+      <!-- BREADS -->
+      <div class="menu-grid" id="breads">
+        <div class="menu-item"><h4>Plain Naan</h4></div>
+        <div class="menu-item"><h4>Tandoori Roti</h4></div>
+        <div class="menu-item"><h4>Tawa Roti</h4></div>
+        <div class="menu-item"><h4>Butter Naan</h4></div>
+        <div class="menu-item"><h4>Naan Garlic / Chilli / Methi</h4></div>
+        <div class="menu-item"><h4>Rogni Naan</h4></div>
+        <div class="menu-item"><h4>Lacha Paratha</h4></div>
+        <div class="menu-item"><h4>Darbar Special Naan</h4><p>Fusion naan stuffed with melted cheese and spicy chillies</p></div>
+        <div class="menu-item"><h4>Special Garlic Naan</h4></div>
+        <div class="menu-item"><h4>Chilli Cheese Naan</h4></div>
+        <div class="menu-item"><h4>Stuffed Keema Naan</h4></div>
+      </div>
+
+      <!-- SANDWICHES & BURGERS -->
+      <div class="menu-grid" id="sandwiches-burgers">
+        <div class="menu-subheading">Sandwiches</div>
+        <div class="menu-item"><h4>Chicken Sandwich</h4><p>Chicken breast, lettuce, tomatoes, onions, mayonnaise, cheddar cheese. Served with chips.</p></div>
+        <div class="menu-item"><h4>Vegetable Sandwich</h4><p>Tomatoes, onions, cucumber, cabbage, lettuce. Served with chips.</p></div>
+
+        <div class="menu-subheading">Burgers</div>
+        <div class="menu-item"><h4>Chicken Zinger Burger</h4><p>Deep fried chicken breast, cheddar cheese, onion, tomatoes, lettuce, thousand island sauce. Served with chips.</p></div>
+        <div class="menu-item"><h4>Chicken Burger</h4><p>Chicken breast, cheddar cheese, onion, tomatoes, lettuce, thousand island sauce. Served with chips.</p></div>
+        <div class="menu-item"><h4>Vegetable Burger</h4><p>Mozzarella cheese, vegetables, tata sauce & guacamole sauce. Served with chips.</p></div>
+      </div>
+
+      <!-- PIZZAS -->
+      <div class="menu-grid" id="pizzas">
+        <div class="menu-item"><h4>Margarita Pizza</h4><p>Tomato sauce & mozzarella cheese, topped with fresh basil leaves.</p></div>
+        <div class="menu-item"><h4>Vegetable Pizza</h4><p>Tomato sauce & mozzarella, green pepper, onion, oyster mushrooms & sliced tomatoes.</p></div>
+        <div class="menu-item"><h4>Funghi Pizza</h4><p>Tomato sauce & mozzarella, sliced onions & fresh oyster mushrooms.</p></div>
+        <div class="menu-item"><h4>Spicy Mexican Chicken Pizza</h4><p>Tomatoes, onions, green pepper, cheese & chicken.</p></div>
+        <div class="menu-item"><h4>Chicken Pizza</h4><p>Tomato sauce & mozzarella, onions, tomatoes, green pepper, shredded chicken.</p></div>
+        <div class="menu-item"><h4>Mutton Pizza</h4><p>Tomato sauce & mozzarella, onions, tomatoes, green pepper, shredded mutton.</p></div>
+
+        <div class="menu-subheading">Pizza Extras</div>
+        <div class="menu-item"><h4>Sweet Corn</h4><p>Topping</p></div>
+        <div class="menu-item"><h4>Cheese</h4><p>Topping</p></div>
+        <div class="menu-item"><h4>Black Olive</h4><p>Topping</p></div>
+      </div>
+
+      <!-- AFRICAN CORNER -->
+      <div class="menu-grid" id="african">
+        <div class="menu-subheading">African Breakfast</div>
+        <div class="menu-item"><h4>Liver Katogo</h4></div>
+        <div class="menu-item"><h4>Offals Katogo</h4></div>
+        <div class="menu-item"><h4>Beans / Peas Katogo</h4></div>
+
+        <div class="menu-subheading">African Snacks</div>
+        <div class="menu-item"><h4>African Chapati</h4></div>
+        <div class="menu-item"><h4>Veg Spring Roll</h4><p>Pair</p></div>
+        <div class="menu-item"><h4>Chicken Samosa</h4><p>Pair</p></div>
+        <div class="menu-item"><h4>Chicken Spring Roll</h4><p>Pair</p></div>
+
+        <div class="menu-subheading">Local Food</div>
+        <div class="menu-item"><h4>Fish Stew</h4><p>Served with matooke, rice, posho, yams, cassava, potatoes, pumpkins & greens</p></div>
+        <div class="menu-item"><h4>Liver Stew</h4><p>Served with matooke, rice, posho, yams, cassava, potatoes, pumpkins & greens</p></div>
+        <div class="menu-item"><h4>Fish & Gnuts</h4><p>Served with matooke, rice, posho, yams, cassava, potatoes, pumpkins & greens</p></div>
+        <div class="menu-item"><h4>Goat Stew</h4><p>Served with matooke, rice, posho, yams, cassava, potatoes, pumpkins & greens</p></div>
+        <div class="menu-item"><h4>Chicken Stew</h4><p>Served with matooke, rice, posho, yams, cassava, potatoes, pumpkins & greens</p></div>
+        <div class="menu-item"><h4>Fresh Beans</h4></div>
+        <div class="menu-item"><h4>Plain Gnuts</h4></div>
+
+        <div class="menu-subheading">Fast Food</div>
+        <div class="menu-item"><h4>Plain Chips</h4></div>
+        <div class="menu-item"><h4>Masala Chips</h4></div>
+        <div class="menu-item"><h4>Chicken Nuggets With Chips</h4><p>8pcs</p></div>
+        <div class="menu-item"><h4>Chicken Lollypop Dry / Gravy</h4><p>8pcs</p></div>
+        <div class="menu-item"><h4>Chicken Lollypop With Chips</h4><p>8pcs</p></div>
+        <div class="menu-item"><h4>Chips Liver</h4></div>
+        <div class="menu-item"><h4>Plain Chicken</h4><p>¼ kg</p></div>
+        <div class="menu-item"><h4>Pan Fried Goat With Chips</h4></div>
+        <div class="menu-item"><h4>Plain Grilled Chicken</h4><p>1pc</p></div>
+        <div class="menu-item"><h4>Chicken Wings Grilled / Fried</h4></div>
+        <div class="menu-item"><h4>Pan Fried Goat</h4></div>
+        <div class="menu-item"><h4>Chicken Chips</h4></div>
+        <div class="menu-item"><h4>Chicken Wraps With Chips</h4></div>
+        <div class="menu-item"><h4>Veg Wraps With Chips</h4></div>
+
+        <div class="menu-subheading">Sea Food</div>
+        <div class="menu-item"><h4>Fish Finger With Chips</h4><p>8pcs</p></div>
+        <div class="menu-item"><h4>Whole Fish Tilapia Grilled / Fried</h4></div>
+        <div class="menu-item"><h4>Whole Fish Tilapia With Chips</h4></div>
+        <div class="menu-item"><h4>Fish Fillet With Chips</h4></div>
+      </div>
+
+      <!-- BEVERAGES -->
+      <div class="menu-grid" id="beverages">
+        <div class="menu-subheading">Smoothies</div>
+        <div class="menu-item"><h4>Mango, Strawberry Smoothie</h4></div>
+        <div class="menu-item"><h4>Tropical Smoothie</h4></div>
+        <div class="menu-item"><h4>Diet Smoothie</h4></div>
+        <div class="menu-item"><h4>Avocado Shake Smoothie</h4></div>
+        <div class="menu-item"><h4>Banana, Strawberry Smoothie</h4></div>
+        <div class="menu-item"><h4>Mango, Pineapple, Lemon, Mint Smoothie</h4></div>
+        <div class="menu-item"><h4>Milk Shake</h4></div>
+
+        <div class="menu-subheading">Ice Cream</div>
+        <div class="menu-item"><h4>Single Scoop</h4></div>
+        <div class="menu-item"><h4>Double Scoop</h4></div>
+        <div class="menu-item"><h4>Ice Cream Sundae</h4></div>
+
+        <div class="menu-subheading">Juices</div>
+        <div class="menu-item"><h4>Apple Juice</h4></div>
+        <div class="menu-item"><h4>Mango Juice</h4></div>
+        <div class="menu-item"><h4>Orange Juice</h4></div>
+        <div class="menu-item"><h4>Passion Juice</h4></div>
+        <div class="menu-item"><h4>Pineapple Juice</h4></div>
+        <div class="menu-item"><h4>Watermelon Juice</h4></div>
+        <div class="menu-item"><h4>Cocktail Juice</h4></div>
+        <div class="menu-item"><h4>Regular Lemonade</h4></div>
+        <div class="menu-item"><h4>Sparkling Lemonade</h4></div>
+        <div class="menu-item"><h4>Regular Mojito</h4></div>
+        <div class="menu-item"><h4>Passion Mojito</h4></div>
+        <div class="menu-item"><h4>Butter Milk</h4></div>
+        <div class="menu-item"><h4>Healthy Blend</h4><p>Apples, Celery, Carrots, Lemons</p></div>
+        <div class="menu-item"><h4>Green Detox</h4><p>Cucumber, celery, parsley, spinach & apple</p></div>
+        <div class="menu-item"><h4>Red Detox</h4><p>Beetroot, spinach, carrot & lemon</p></div>
+
+        <div class="menu-subheading">Cold Drinks</div>
+        <div class="menu-item"><h4>Soda</h4></div>
+        <div class="menu-item"><h4>Minute Maid</h4></div>
+        <div class="menu-item"><h4>Mineral Water</h4></div>
+        <div class="menu-item"><h4>Sparkling Water</h4></div>
+        <div class="menu-item"><h4>Mineral Water Big</h4></div>
+
+        <div class="menu-subheading">Coffee & Tea</div>
+        <div class="menu-item"><h4>Fresh Mint Tea</h4></div>
+        <div class="menu-item"><h4>Espresso (Single)</h4></div>
+        <div class="menu-item"><h4>Espresso (Double)</h4></div>
+        <div class="menu-item"><h4>Milk Coffee</h4><p>Full Pot</p></div>
+        <div class="menu-item"><h4>Black Coffee</h4><p>Full Pot</p></div>
+        <div class="menu-item"><h4>Cappuccino (Single)</h4></div>
+        <div class="menu-item"><h4>Cappuccino (Double)</h4></div>
+        <div class="menu-item"><h4>Dawa Tea</h4></div>
+        <div class="menu-item"><h4>Milk Tea / Indian</h4><p>Full Pot</p></div>
+        <div class="menu-item"><h4>Mocha</h4></div>
+        <div class="menu-item"><h4>Americano</h4></div>
+        <div class="menu-item"><h4>Cafe Latte</h4></div>
+        <div class="menu-item"><h4>Hot Chocolate</h4></div>
+        <div class="menu-item"><h4>Ice Tea</h4></div>
+        <div class="menu-item"><h4>Ice Coffee</h4></div>
+        <div class="menu-item"><h4>Lemon Tea</h4></div>
+        <div class="menu-item"><h4>English Coffee</h4></div>
+        <div class="menu-item"><h4>Macchiato Coffee</h4></div>
+      </div>
+
+      <!-- DESSERT -->
+      <div class="menu-grid" id="dessert">
+        <div class="menu-item"><h4>Kheer</h4><p>Traditional rice pudding</p></div>
+        <div class="menu-item"><h4>Zarda Rice</h4><p>Sweet rice dish</p></div>
+        <div class="menu-item"><h4>Gajar Halwa</h4><p>Carrot-based sweet dessert</p></div>
+        <div class="menu-item"><h4>Gulab Jamun</h4><p>4pcs — Soft milk-solid dumplings soaked in sugar syrup</p></div>
+      </div>
+    </div>
+  </section>
 
   <!-- AMBIANCE -->
   <section id="ambiance">
@@ -742,7 +999,6 @@
         </a>
         <p style="font-family: 'Overpass Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;">Tap to call</p>
       </div>
-
     </div>
   </section>
 
@@ -767,7 +1023,37 @@
   </footer>
   <div class="footer-copy">© 2026 Darbar Restaurant. All rights reserved.</div>
 
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/256741095132" target="_blank" aria-label="Chat on WhatsApp" style="
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+    width: 56px; height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+  " onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.6)'"
+     onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
+    💬
+  </a>
+
   <script>
+    // Menu tab switching
+    const tabs = document.querySelectorAll('.tab');
+    const grids = document.querySelectorAll('.menu-grid');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        grids.forEach(g => g.classList.remove('active'));
+        tab.classList.add('active');
+        const category = tab.dataset.category;
+        document.getElementById(category).classList.add('active');
+      });
+    });
+
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -778,7 +1064,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.about, .ambiance, .reservation-inner').forEach(el => {
+    document.querySelectorAll('.about, .menu-section, .ambiance, .reservation-inner').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(40px)';
       el.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
