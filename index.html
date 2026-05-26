@@ -8,8 +8,42 @@
   <meta property="og:description" content="Where every plate tells a story of land and season. Fine dining in Kampala, Uganda." />
   <meta property="og:type" content="website" />
   <title>Darbar Restaurant | Kampala</title>
+  <meta name="theme-color" content="#0e0b08" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Overpass+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Structured Data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Darbar Restaurant",
+    "description": "Kampala's finest dining experience. Rooted in East African tradition, crafted with seasonal ingredients.",
+    "url": "https://darbarrestaurant.com",
+    "telephone": "+256741095132",
+    "email": "kjifoodpointug@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "First Floor, The Marina Hotel, Opp. Quality Supermarket, Martin Rd",
+      "addressLocality": "Kampala",
+      "addressCountry": "UG"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 0.3136, "longitude": 32.5811 },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "07:30",
+      "closes": "00:00"
+    },
+    "servesCuisine": ["Indian","East African","Chinese","BBQ"],
+    "priceRange": "$$",
+    "image": "https://darbarrestaurant.com/og-image.jpg",
+    "sameAs": [
+      "https://www.instagram.com/darbarrestaurant2",
+      "https://www.tiktok.com/@darbarrestaurantug"
+    ]
+  }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -22,7 +56,7 @@
       --border: rgba(184,146,74,0.25);
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
     body {
       background: var(--ink);
@@ -72,6 +106,28 @@
     }
 
     .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 101;
+      padding: 8px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
 
     /* ── HERO ── */
     .hero {
@@ -223,6 +279,33 @@
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem; left: 2rem;
+      z-index: 200;
+      width: 44px; height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--gold);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: opacity 0.4s, transform 0.4s, border-color 0.3s;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .back-to-top:hover { border-color: var(--gold); }
 
     /* ── SECTION BASE ── */
     section { padding: 7rem 4rem; }
@@ -407,6 +490,9 @@
 
     .ambiance-grid {
       margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
     .amb-card {
@@ -521,7 +607,21 @@
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       nav { padding: 1.2rem 1.5rem; }
-      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0; right: -100%;
+        width: 70vw; height: 100vh;
+        background: rgba(14,11,8,0.98);
+        backdrop-filter: blur(10px);
+        padding: 6rem 2rem;
+        gap: 2.5rem;
+        transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
+      }
+      .nav-links.open { right: 0; }
+      .nav-links a { font-size: 0.75rem; }
       section { padding: 5rem 1.5rem; }
 
       .about { grid-template-columns: 1fr; gap: 3rem; }
@@ -537,8 +637,11 @@
 <body>
 
   <!-- NAV -->
-  <nav>
+  <nav role="navigation" aria-label="Main navigation">
     <div class="nav-logo">Darbar</div>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="#about">Story</a></li>
       <li><a href="#menu">Menu</a></li>
@@ -556,7 +659,7 @@
       <p class="hero-subtitle">Where every plate tells a story of land and season</p>
       <div class="hero-cta">
         <a href="#reserve" class="btn-gold" style="margin-right: 1rem;"><span>Reserve a Table</span></a>
-        <a href="https://glovoapp.com/en/ug/kampala/stores/darbar-restaurant-kpa" target="_blank" class="btn-gold"><span>🛵 &nbsp;Order on Glovo</span></a>
+        <a href="https://glovoapp.com/en/ug/kampala/stores/darbar-restaurant-kpa" target="_blank" rel="noopener noreferrer" class="btn-gold"><span>🛵 &nbsp;Order on Glovo</span></a>
       </div>
     </div>
     <div class="scroll-hint">
@@ -575,7 +678,7 @@
         <p>Every dish that leaves our kitchen carries with it the intention of the hands that shaped it: honest, generous, and full of character.</p>
         <div class="stat-row">
           <div class="stat">
-            <h3>1+</h3>
+            <h3>3+</h3>
             <p>Years serving</p>
           </div>
           <div class="stat">
@@ -958,6 +1061,21 @@
           <h3>Evening Dining</h3>
           <p>As the sun dips below Kampala's skyline, Darbar transforms into an intimate sanctuary. Candlelit tables, curated music, and attentive service that never intrudes — only enhances. The perfect setting for a celebration or a quiet evening for two.</p>
         </div>
+        <div class="amb-card">
+          <span class="amb-icon">🌿</span>
+          <h3>Outdoor Terrace</h3>
+          <p>Dine beneath the open Kampala sky on our lush garden terrace. Surrounded by greenery and the gentle hum of the city, it's the ideal spot for leisurely lunches and sunset gatherings with family and friends.</p>
+        </div>
+        <div class="amb-card">
+          <span class="amb-icon">🎉</span>
+          <h3>Private Events</h3>
+          <p>From birthday celebrations to corporate dinners, our private dining space accommodates up to 40 guests. Custom menus, dedicated service, and an ambiance tailored to your occasion — every detail considered.</p>
+        </div>
+      </div>
+
+      <!-- Google Maps -->
+      <div style="margin-top: 4rem; border-radius: 4px; overflow: hidden; border: 1px solid var(--border);">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.75!2d32.58!3d0.313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMarina%20Hotel!5e0!3m2!1sen!2sug!4v1690000000000" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Darbar Restaurant location"></iframe>
       </div>
     </div>
   </section>
@@ -993,14 +1111,14 @@
       <p><a href="tel:0741095132">0741 095 132</a></p>
       <p><a href="mailto:kjifoodpointug@gmail.com">kjifoodpointug@gmail.com</a></p>
       <br>
-      <p><a href="https://www.instagram.com/darbarrestaurant2" target="_blank">Instagram</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@darbarrestaurantug" target="_blank">TikTok</a></p>
-      <p><a href="https://wa.me/256741095132" target="_blank">WhatsApp</a></p>
+      <p><a href="https://www.instagram.com/darbarrestaurant2" target="_blank" rel="noopener noreferrer">Instagram</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@darbarrestaurantug" target="_blank" rel="noopener noreferrer">TikTok</a></p>
+      <p><a href="https://wa.me/256741095132" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
     </div>
   </footer>
   <div class="footer-copy">© 2026 Darbar Restaurant. All rights reserved.</div>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/256741095132" target="_blank" aria-label="Chat on WhatsApp" style="
+  <a href="https://wa.me/256741095132" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" style="
     position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
     width: 56px; height: 56px;
     background: #25D366;
@@ -1015,7 +1133,27 @@
     💬
   </a>
 
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
   <script>
+    // Hamburger toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
     // Menu tab switching
     const tabs = document.querySelectorAll('.tab');
     const grids = document.querySelectorAll('.menu-grid');
@@ -1045,6 +1183,15 @@
       el.style.transform = 'translateY(40px)';
       el.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
       observer.observe(el);
+    });
+
+    // Back to top
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 600);
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
