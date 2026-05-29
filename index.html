@@ -485,6 +485,66 @@
       margin-bottom: 0;
     }
 
+    /* ── TIKTOK ── */
+    .tiktok-section {
+      background: linear-gradient(180deg, #0a0906 0%, #0e0b08 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tiktok-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+
+    .tiktok-inner .section-label { justify-content: center; }
+    .tiktok-inner .section-label::after { display: none; }
+
+    .tiktok-grid {
+      margin-top: 3.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .tiktok-card {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #1a1410;
+      border: 1px solid var(--border);
+      transition: transform 0.4s, border-color 0.4s;
+      min-height: 500px;
+    }
+
+    .tiktok-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .tiktok-card blockquote,
+    .tiktok-card iframe {
+      width: 100%;
+      min-height: 500px;
+      border: none;
+      margin: 0;
+    }
+
+    .tiktok-cta {
+      margin-top: 3rem;
+    }
+
+    .tiktok-cta .btn-gold {
+      font-size: 0.65rem;
+    }
+
+    @media (max-width: 768px) {
+      .tiktok-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .tiktok-card { min-height: 560px; }
+    }
+
     /* ── AMBIANCE ── */
     .ambiance { max-width: 900px; margin: 0 auto; }
 
@@ -645,6 +705,7 @@
     <ul class="nav-links">
       <li><a href="#about">Story</a></li>
       <li><a href="#menu">Menu</a></li>
+      <li><a href="#tiktok">TikTok</a></li>
       <li><a href="#ambiance">Experience</a></li>
       <li><a href="#reserve">Reserve</a></li>
     </ul>
@@ -1050,6 +1111,38 @@
     </div>
   </section>
 
+  <!-- TIKTOK -->
+  <section id="tiktok" class="tiktok-section">
+    <div class="tiktok-inner">
+      <p class="section-label">Follow Along</p>
+      <h2 class="section-title">We're on <em>TikTok</em></h2>
+
+      <div class="tiktok-grid">
+        <div class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@darbarrestaurantug/video/7644753674593471762" data-video-id="7644753674593471762" style="max-width:100%;min-width:100%;">
+            <section></section>
+          </blockquote>
+        </div>
+        <div class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@darbarrestaurantug/video/7644516104022297863" data-video-id="7644516104022297863" style="max-width:100%;min-width:100%;">
+            <section></section>
+          </blockquote>
+        </div>
+        <div class="tiktok-card">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@darbarrestaurantug/video/7644515646096542994" data-video-id="7644515646096542994" style="max-width:100%;min-width:100%;">
+            <section></section>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="tiktok-cta">
+        <a href="https://www.tiktok.com/@darbarrestaurantug" target="_blank" rel="noopener noreferrer" class="btn-gold">
+          <span>🎵 &nbsp;Follow Us on TikTok</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- AMBIANCE -->
   <section id="ambiance">
     <div class="ambiance">
@@ -1138,6 +1231,9 @@
 
   <!-- Back to Top -->
   <button class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- TikTok Embed -->
+  <script async src="https://www.tiktok.com/embed.js"></script>
 
   <script>
     // Hamburger toggle
