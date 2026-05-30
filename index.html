@@ -22,7 +22,7 @@
   <meta name="theme-color" content="#0e0b08" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Overpass+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Overpass+Mono:wght@300;400&display=swap" rel="stylesheet" crossorigin="anonymous">
   <!-- Structured Data for Google -->
   <script type="application/ld+json">
   {
@@ -136,12 +136,19 @@
       --gold-light: #d4a96a;
       --muted: #8e8474;
       --border: rgba(184,146,74,0.25);
+      --breakpoint-mobile: 768px;
     }
 
     html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
     @media (max-width: 768px) {
       html { scroll-padding-top: 65px; }
+    }
+
+    /* Scroll reveal animation */
+    .revealed {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
     }
 
     body {
@@ -947,7 +954,7 @@
       </div>
       <div class="about-image">
         <div class="about-image-inner">
-          <img src="images/tandoori-chicken.jpg" alt="Tandoori chicken served with naan bread, onions, and dipping sauces at Darbar Restaurant" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" loading="lazy">
+          <img src="images/tandoori-chicken.jpg" alt="Tandoori chicken served with naan bread, onions, and dipping sauces at Darbar Restaurant" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" loading="lazy" width="400" height="533">
         </div>
       </div>
     </div>
@@ -961,19 +968,19 @@
           <span class="section-label">Our Kitchen</span>
           <h2 class="section-title">The <em>Menu</em></h2>
         </div>
-        <div class="menu-tabs">
-          <button class="tab active" data-category="breakfast">Breakfast</button>
-          <button class="tab" data-category="soups-salads">Soups & Salads</button>
-          <button class="tab" data-category="starters">Starters</button>
-          <button class="tab" data-category="bbq">BBQ</button>
-          <button class="tab" data-category="rice-noodles">Rice & Noodles</button>
-          <button class="tab" data-category="main-course">Main Course</button>
-          <button class="tab" data-category="breads">Breads</button>
-          <button class="tab" data-category="sandwiches-burgers">Sandwiches</button>
-          <button class="tab" data-category="pizzas">Pizzas</button>
-          <button class="tab" data-category="african">African Corner</button>
-          <button class="tab" data-category="beverages">Beverages</button>
-          <button class="tab" data-category="dessert">Dessert</button>
+        <div class="menu-tabs" role="tablist">
+          <button class="tab active" role="tab" aria-selected="true" data-category="breakfast">Breakfast</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="soups-salads">Soups & Salads</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="starters">Starters</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="bbq">BBQ</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="rice-noodles">Rice & Noodles</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="main-course">Main Course</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="breads">Breads</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="sandwiches-burgers">Sandwiches</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="pizzas">Pizzas</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="african">African Corner</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="beverages">Beverages</button>
+          <button class="tab" role="tab" aria-selected="false" data-category="dessert">Dessert</button>
         </div>
       </div>
 
@@ -1307,7 +1314,7 @@
   <!-- KITCHEN SHOWCASE -->
   <section id="kitchen" class="kitchen-showcase" aria-label="Kitchen showcase">
     <div class="kitchen-showcase-inner">
-      <img src="images/grilled-skewers.jpg" alt="Assorted grilled meat skewers, roasted vegetables, and dipping sauces from Darbar Restaurant's BBQ kitchen" loading="lazy">
+      <img src="images/grilled-skewers.jpg" alt="Assorted grilled meat skewers, roasted vegetables, and dipping sauces from Darbar Restaurant's BBQ kitchen" loading="lazy" width="1280" height="500">
       <div class="kitchen-showcase-overlay"></div>
       <div class="kitchen-showcase-caption">
         <p class="kitchen-eyebrow">From Our Kitchen</p>
@@ -1461,20 +1468,23 @@
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
         grids.forEach(g => g.classList.remove('active'));
         tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
         const category = tab.dataset.category;
         document.getElementById(category).classList.add('active');
       });
     });
 
     // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'translateY(0)';
+          e.target.classList.add('revealed');
         }
       });
     }, { threshold: 0.1 });
@@ -1483,14 +1493,23 @@
       el.style.opacity = '0';
       el.style.transform = 'translateY(40px)';
       el.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
-      observer.observe(el);
+      revealObserver.observe(el);
     });
 
-    // Back to top
+    // Back to top using IntersectionObserver
     const backToTop = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
-      backToTop.classList.toggle('visible', window.scrollY > 600);
-    });
+    const heroSection = document.getElementById('hero');
+    const backToTopObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    if (heroSection) backToTopObserver.observe(heroSection);
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
