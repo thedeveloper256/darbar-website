@@ -7,6 +7,17 @@
   <meta property="og:title" content="Darbar Restaurant | Kampala" />
   <meta property="og:description" content="Where every plate tells a story of land and season. Fine dining in Kampala, Uganda." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://darbarrestaurant.com" />
+  <meta property="og:image" content="https://darbarrestaurant.com/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Darbar Restaurant | Kampala" />
+  <meta name="twitter:description" content="Where every plate tells a story of land and season. Fine dining in Kampala, Uganda." />
+  <meta name="twitter:image" content="https://darbarrestaurant.com/og-image.jpg" />
+  <link rel="canonical" href="https://darbarrestaurant.com" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
   <title>Darbar Restaurant | Kampala</title>
   <meta name="theme-color" content="#0e0b08" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1232,8 +1243,25 @@
   <!-- Back to Top -->
   <button class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
 
-  <!-- TikTok Embed -->
-  <script async src="https://www.tiktok.com/embed.js"></script>
+  <!-- TikTok Embed Script (lazy-loaded on scroll) -->
+  <script>
+    // ── TikTok Lazy Load ──
+    let tiktokLoaded = false;
+    const tiktokObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !tiktokLoaded) {
+          tiktokLoaded = true;
+          const script = document.createElement('script');
+          script.src = 'https://www.tiktok.com/embed.js';
+          script.async = true;
+          document.body.appendChild(script);
+          tiktokObserver.disconnect();
+        }
+      });
+    }, { rootMargin: '300px' });
+
+    const tiktokSection = document.getElementById('tiktok');
+    if (tiktokSection) tiktokObserver.observe(tiktokSection);
 
   <script>
     // Hamburger toggle

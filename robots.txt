@@ -1,0 +1,5 @@
+# https://darbarrestaurant.com/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://darbarrestaurant.com/sitemap.xml
