@@ -176,11 +176,16 @@
     }
 
     .nav-logo {
-      font-size: 1.5rem;
-      font-weight: 300;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold);
+      display: flex;
+      align-items: center;
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-logo img {
+      height: 100%;
+      width: auto;
+      max-width: 120px;
     }
 
     .nav-links {
@@ -828,12 +833,17 @@
     }
 
     .footer-logo {
-      font-size: 2rem;
-      font-weight: 300;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold);
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+      width: auto;
+    }
+
+    .footer-logo img {
+      height: 100%;
+      width: auto;
+      max-width: 150px;
     }
 
     .footer-info {
@@ -898,7 +908,9 @@
 
   <!-- NAV -->
   <nav role="navigation" aria-label="Main navigation">
-    <div class="nav-logo">Darbar</div>
+    <a href="#hero" class="nav-logo" aria-label="Darbar Restaurant">
+      <img src="darbar-logo.svg" alt="Darbar Restaurant logo" loading="eager">
+    </a>
     <button class="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -1404,7 +1416,9 @@
       <p>Open Every Day</p>
       <p>7:30 AM — 12:00 AM</p>
     </div>
-    <div class="footer-logo">Darbar</div>
+    <a href="#hero" class="footer-logo" aria-label="Darbar Restaurant">
+      <img src="darbar-logo.svg" alt="Darbar Restaurant logo" loading="lazy">
+    </a>
     <div class="footer-info footer-right">
       <p><a href="tel:0741095132">0741 095 132</a></p>
       <p><a href="mailto:kjifoodpointug@gmail.com">kjifoodpointug@gmail.com</a></p>
