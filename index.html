@@ -32,9 +32,9 @@
   <title>Darbar Restaurant | Kampala</title>
   <meta name="theme-color" content="#0e0b08" />
   <link rel="preload" as="image" href="images/braised-chicken.jpg" fetchpriority="high">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Overpass+Mono:wght@300;400&display=swap" rel="stylesheet" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorant-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/overpass-mono.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Structured Data for Google -->
   <script type="application/ld+json">
   {
@@ -139,6 +139,57 @@
   }
   </script>
   <style>
+    /* ── SELF-HOSTED FONTS ── */
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url('fonts/cormorant-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/cormorant-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('fonts/cormorant-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: italic;
+      font-weight: 300;
+      font-display: swap;
+      src: url('fonts/cormorant-italic.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/cormorant-italic.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Overpass Mono';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url('fonts/overpass-mono.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Overpass Mono';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/overpass-mono.woff2') format('woff2');
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
