@@ -140,6 +140,10 @@
 
     html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
+    @media (max-width: 768px) {
+      html { scroll-padding-top: 65px; }
+    }
+
     body {
       background: var(--ink);
       color: var(--cream);
@@ -391,6 +395,28 @@
     }
     .back-to-top:hover { border-color: var(--gold); }
 
+    /* Floating WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      z-index: 200;
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      font-size: 1.6rem;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.6);
+    }
+
     /* ── SECTION BASE ── */
     section { padding: 7rem 4rem; }
 
@@ -567,6 +593,63 @@
       color: var(--gold);
       border-bottom: 1px solid var(--border);
       margin-bottom: 0;
+    }
+
+    /* ── KITCHEN SHOWCASE ── */
+    .kitchen-showcase {
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .kitchen-showcase-inner {
+      position: relative;
+      max-height: 500px;
+      overflow: hidden;
+    }
+
+    .kitchen-showcase-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.65) sepia(0.2) contrast(0.95);
+    }
+
+    .kitchen-showcase-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(14,11,8,0.7) 0%, transparent 40%, transparent 60%, rgba(14,11,8,0.7) 100%),
+        linear-gradient(to top, rgba(14,11,8,0.6) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .kitchen-showcase-caption {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 2;
+    }
+
+    .kitchen-showcase-caption .kitchen-eyebrow {
+      font-family: 'Overpass Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .kitchen-showcase-caption .kitchen-tagline {
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--cream);
+      font-style: italic;
     }
 
     /* ── TIKTOK ── */
@@ -1222,13 +1305,13 @@
   </section>
 
   <!-- KITCHEN SHOWCASE -->
-  <section id="kitchen" aria-label="Kitchen showcase" style="padding:0;position:relative;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-    <div style="position:relative;max-height:500px;overflow:hidden;">
-      <img src="images/grilled-skewers.jpg" alt="Assorted grilled meat skewers, roasted vegetables, and dipping sauces from Darbar Restaurant's BBQ kitchen" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.65) sepia(0.2) contrast(0.95);" loading="lazy">
-      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(14,11,8,0.7) 0%,transparent 40%,transparent 60%,rgba(14,11,8,0.7) 100%),linear-gradient(to top,rgba(14,11,8,0.6) 0%,transparent 50%);pointer-events:none;"></div>
-      <div style="position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);text-align:center;z-index:2;">
-        <p style="font-family:'Overpass Mono',monospace;font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">From Our Kitchen</p>
-        <p style="font-size:2rem;font-weight:300;color:var(--cream);font-style:italic;">Fire, flavour &amp; craft</p>
+  <section id="kitchen" class="kitchen-showcase" aria-label="Kitchen showcase">
+    <div class="kitchen-showcase-inner">
+      <img src="images/grilled-skewers.jpg" alt="Assorted grilled meat skewers, roasted vegetables, and dipping sauces from Darbar Restaurant's BBQ kitchen" loading="lazy">
+      <div class="kitchen-showcase-overlay"></div>
+      <div class="kitchen-showcase-caption">
+        <p class="kitchen-eyebrow">From Our Kitchen</p>
+        <p class="kitchen-tagline">Fire, flavour &amp; craft</p>
       </div>
     </div>
   </section>
@@ -1326,18 +1409,7 @@
   <div class="footer-copy">© 2026 Darbar Restaurant. All rights reserved.</div>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/256741095132" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" style="
-    position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
-    width: 56px; height: 56px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-    font-size: 1.6rem;
-    text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-  " onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.6)'"
-     onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
+  <a href="https://wa.me/256741095132" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
     💬
   </a>
 
