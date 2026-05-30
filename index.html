@@ -536,6 +536,24 @@
       min-height: 500px;
       border: none;
       margin: 0;
+      filter: brightness(0.75) sepia(0.25) contrast(0.9);
+      transition: filter 0.4s;
+    }
+
+    .tiktok-card:hover blockquote,
+    .tiktok-card:hover iframe {
+      filter: brightness(0.9) sepia(0.15) contrast(0.95);
+    }
+
+    /* Dark overlay to further blend TikTok's white UI */
+    .tiktok-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, transparent 50%, rgba(14,11,8,0.45) 100%);
+      border-radius: 4px;
     }
 
     .tiktok-cta {
