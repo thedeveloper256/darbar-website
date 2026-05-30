@@ -584,8 +584,11 @@
     .tiktok-grid {
       margin-top: 3.5rem;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
       gap: 1.5rem;
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .tiktok-card {
@@ -619,7 +622,7 @@
     }
 
     /* Dark overlay to further blend TikTok's white UI */
-    .tiktok-card::after {
+    .tiktok-card:not(.tiktok-profile-card)::after {
       content: '';
       position: absolute;
       inset: 0;
@@ -627,6 +630,12 @@
       z-index: 1;
       background: radial-gradient(ellipse 80% 60% at 50% 40%, transparent 50%, rgba(14,11,8,0.45) 100%);
       border-radius: 4px;
+    }
+
+    /* Profile embed keeps TikTok's native styling */
+    .tiktok-profile-card blockquote,
+    .tiktok-profile-card iframe {
+      filter: none;
     }
 
     .tiktok-cta {
@@ -639,10 +648,7 @@
 
     @media (max-width: 768px) {
       .tiktok-grid {
-        grid-template-columns: 1fr;
-        max-width: 380px;
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 100%;
       }
       .tiktok-card { min-height: 560px; }
     }
@@ -1232,18 +1238,8 @@
       <h2 class="section-title">We're on <em>TikTok</em></h2>
 
       <div class="tiktok-grid">
-        <div class="tiktok-card">
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@darbarrestaurantug/video/7644753674593471762" data-video-id="7644753674593471762" style="max-width:100%;min-width:100%;">
-            <section></section>
-          </blockquote>
-        </div>
-        <div class="tiktok-card">
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@darbarrestaurantug/video/7644516104022297863" data-video-id="7644516104022297863" style="max-width:100%;min-width:100%;">
-            <section></section>
-          </blockquote>
-        </div>
-        <div class="tiktok-card">
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@darbarrestaurantug/video/7644515646096542994" data-video-id="7644515646096542994" style="max-width:100%;min-width:100%;">
+        <div class="tiktok-card tiktok-profile-card">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@darbarrestaurantug" data-unique-id="darbarrestaurantug" data-embed-type="creator" style="max-width:100%;min-width:100%;min-height:500px;">
             <section></section>
           </blockquote>
         </div>
