@@ -622,20 +622,25 @@
     }
 
     /* Dark overlay to further blend TikTok's white UI */
-    .tiktok-card:not(.tiktok-profile-card)::after {
+    .tiktok-card::after {
       content: '';
       position: absolute;
       inset: 0;
       pointer-events: none;
       z-index: 1;
-      background: radial-gradient(ellipse 80% 60% at 50% 40%, transparent 50%, rgba(14,11,8,0.45) 100%);
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, transparent 50%, rgba(14,11,8,0.25) 100%);
       border-radius: 4px;
     }
 
-    /* Profile embed keeps TikTok's native styling */
+    /* Profile embed: warm tint to match site theme without crushing visibility */
     .tiktok-profile-card blockquote,
     .tiktok-profile-card iframe {
-      filter: none;
+      filter: brightness(0.8) sepia(0.15) saturate(0.7);
+    }
+
+    .tiktok-profile-card:hover blockquote,
+    .tiktok-profile-card:hover iframe {
+      filter: brightness(0.9) sepia(0.1) saturate(0.85);
     }
 
     .tiktok-cta {
